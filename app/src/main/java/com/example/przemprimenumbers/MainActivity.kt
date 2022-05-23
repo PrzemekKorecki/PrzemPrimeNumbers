@@ -16,7 +16,7 @@ class MainActivity : AppCompatActivity() {
         val _editText = findViewById<EditText>(R.id.editText)
 
         val button = findViewById<Button>(R.id.button)
-        val text = findViewById<TextView>(R.id.textView)
+        val _textView = findViewById<TextView>(R.id.textView)
         val prime: MutableList<Int> = mutableListOf()
         var counter: Int = 0
 
@@ -24,8 +24,8 @@ class MainActivity : AppCompatActivity() {
 
         button.setOnClickListener(){
             val start = System.currentTimeMillis()
-            setColor(text, "*")
-            text.append("\n\n")
+            setColor(_textView, "*")
+            _textView.append("\n\n")
             try {
                 for (i in 2.._editText.text.toString().toInt()){
                     if (isPrime(i)){
@@ -35,20 +35,20 @@ class MainActivity : AppCompatActivity() {
                 }
                 val stop = System.currentTimeMillis()
                 czas = (stop - start).toInt()
-                text.append("number of primes in such range is $counter\nprogram lasted for $czas miliseconds\n")
+                _textView.append("number of primes in such range is $counter\nprogram lasted for $czas miliseconds\n")
 
                 var licznik = 0
 
                 for (i in prime){
                     licznik++
-                    text.append(i.toString())
-                    text.append("   ")
+                    _textView.append(i.toString())
+                    _textView.append("   ")
                     if (licznik % 6 == 0) {
-                        text.append("\n")
+                        _textView.append("\n")
                     }
                 }
             } catch (e:Exception){
-                text.text = e.toString()
+                _textView.text = e.toString()
             }
         }
     }
