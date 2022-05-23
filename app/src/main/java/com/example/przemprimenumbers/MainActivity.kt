@@ -35,7 +35,7 @@ class MainActivity : AppCompatActivity() {
                 }
                 val stop = System.currentTimeMillis()
                 czas = (stop - start).toInt()
-                _textView.append("number of primes in such range is $counter\nprogram lasted for $czas miliseconds\n")
+                _textView.append("number of primes in such range is $counter\nprogram last for $czas miliseconds\n")
 
                 var licznik = 0
 
